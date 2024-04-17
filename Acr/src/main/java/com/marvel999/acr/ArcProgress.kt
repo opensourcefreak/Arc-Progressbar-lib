@@ -345,9 +345,9 @@ class ArcProgress(context: Context, attributes: AttributeSet) : View(context, at
         objectAnimator.start()
     }
 
-    fun setProgressWithAnimation(progress: Float, duration: Int) {
+    fun setProgressWithAnimation(progress: Float, duration: Float) {
         val objectAnimator = ObjectAnimator.ofFloat(this, "progress", progress)
-        objectAnimator.duration = duration.toLong()
+        objectAnimator.duration = duration.roundToLong()
         objectAnimator.interpolator = DecelerateInterpolator()
         objectAnimator.start()
     }
